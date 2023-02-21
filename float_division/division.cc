@@ -23,7 +23,7 @@ int main ()
   cout << setfill(' '); // need to reset the fill character
 
   //
-  // Fill in the table rows.
+  // Fill in the table rows
   //
 
   for (float numer=-10; numer<=10; ++numer)
