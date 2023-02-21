@@ -1,40 +1,37 @@
 #include <iomanip>
 #include <iostream>
+#include <climits>
+#include <cmath>
 
 using namespace std;
 
 int main ()
 {
-  //
-  // Output the header lines.
-  //
-
-  cout << setw(5) << "";
-  for (int32_t denom=-10; denom<=10; ++denom) {
-    cout << setw(11) << showpos << denom;
-  }
-  cout << endl;
-
-  cout << setfill('-') << setw(5) << "";
-  for (int32_t denom=-10; denom<=10; ++denom) {
-    cout << setfill('-') << setw(11) << "";
-  }
-  cout << endl;
-  cout << setfill(' '); // need to reset the fill character
-
-  //
-  // Fill in the table rows.
-  //
-
-  for (float numer=-10; numer<=10; ++numer)
   {
-    cout << setw(3) << showpos << static_cast<int>(numer) << ": ";
-    for (float denom=-10; denom<=10; ++denom)
-    {
-      float result = numer/denom;
-      cout << setw(11) << showpos << scientific << setprecision(3) << result;
-    }
-    cout << endl;
-  }
-}
+    /////////////////////////////////
+    // CREATE THREE int32_t VALUES //
+    // (big, small, sum)           //
+    /////////////////////////////////
+    int32_t big= pow(10,8);
+    int32_t small= 1;
+    int32_t sum= big+small;
 
+    cout << "int32_t:" << endl;
+    cout << "  big   = " << big  << endl;
+    cout << "  small = " << small<< endl;
+    cout << "  sum   = " << sum  << endl;
+  }
+
+  {
+    ///////////////////////////////
+    // CREATE THREE float VALUES //
+    // (big, small, sum)         //
+    ///////////////////////////////
+float big= pow(10,8), small =1;
+float sum = big+small;
+    cout << "float:" << endl;
+    cout << "  big   = " << fixed << setprecision(1) << big   << endl;
+    cout << "  small = " << fixed << setprecision(1) << small << endl;
+    cout << "  sum   = " << fixed << setprecision(1) << sum   << endl;
+  } 
+}
